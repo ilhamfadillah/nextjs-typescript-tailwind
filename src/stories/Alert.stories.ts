@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Alert } from "./Alert";
+import { Alert } from "@/components/Alert";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Example/Alert",
+  title: "Component/Alert",
   component: Alert,
   parameters: {
     layout: "centered",

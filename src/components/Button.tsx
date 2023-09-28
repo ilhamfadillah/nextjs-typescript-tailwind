@@ -4,6 +4,7 @@ interface ButtonProps {
   color: "white" | "black" | "blue" | "green" | "red";
   label: string;
   additionalClass?: string;
+  type?: "submit" | "button";
   onClick?: () => void;
 }
 
@@ -34,6 +35,7 @@ function getClassButton(color: string) {
 export const Button = ({
   color = "white",
   label,
+  type = "submit",
   additionalClass,
   ...props
 }: ButtonProps) => {
@@ -41,7 +43,7 @@ export const Button = ({
   const buttonClass = additionalClass ? ["font-bold py-2 px-4 rounded", getColorClass, additionalClass] : ["font-bold py-2 px-4 rounded", getColorClass];
   return (
     <button
-      type="button"
+      type={type}
       className={buttonClass.join(" ")}
       {...props}
     >

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 
-import { Login } from './Login';
+import { Login } from '@/components/Login';
 
 const meta = {
-  title: 'Example/Login',
+  title: 'Component/Form/Login',
   component: Login,
   parameters: {
     layout: 'fullscreen',

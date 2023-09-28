@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/nextjs";
 
+const path = require('path');
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -14,6 +16,17 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  webpackFinal: async (config) => {
+    config.resolve = config.resolve || {};
+
+    // Tambahkan alias "@" ke objek "resolve"
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '../src'), // Sesuaikan dengan path ke direktori "src" di proyek Anda.
+    };
+
+    return config;
   },
 };
 export default config;
